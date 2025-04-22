@@ -1,0 +1,39 @@
+# Revised prompt_call_2.txt
+
+You are a Senior QA Auditor producing the final set of test artifacts based on the provided information.
+
+**Instructions:**
+
+1.  **Analyze Inputs:** Carefully review the 'Extracted Testable Items' list (from the previous step) AND the 'Original Source Documents' provided below. Use the original documents to ensure the list of testable items is complete and accurate.
+2.  **Generate Final Testable Items List:** Based on your complete analysis (including cross-referencing with original documents), produce the final, comprehensive list of 'Testable Items'. Assign unique IDs (e.g., ITEM-001) and note the source for each item. Output this under the heading '## Testable Items List'.
+3.  **Generate Test Strategy:** Based on the final 'Testable Items List', outline the Test Strategy including Scope, Objectives, and suggested Test Types. Output under '## Test Strategy'.
+4.  **Generate Test Scenarios:** Based on the final 'Testable Items List', group related items into logical Test Scenarios (e.g., S-01: User Authentication). List the covered Item IDs for each scenario. Output under '## Test Scenarios'.
+5.  **Generate Test Cases:** For each Test Scenario, generate detailed Test Cases covering positive, negative, and boundary conditions based on the final 'Testable Items List'. Include: Test Case ID (e.g., TC-001), Related Item ID(s), Scenario ID, Preconditions, Steps, Expected Results. Output under '## Test Cases'.
+6.  **Generate Traceability Matrix:** Create a Requirement Traceability Matrix (RTM) mapping the final 'Testable Item' IDs to the final 'Test Case' IDs. Format this as a Markdown table or CSV structure under the heading '## Traceability Matrix'.
+
+**Input Information:**
+
+--- START OF INPUT FROM PREVIOUS STEP ---
+
+## Extracted Testable Items (from Call 1)
+{testable_items_list_text}
+
+## Draft Test Artifacts (Strategy, Scenarios, Cases from Call 1)
+{draft_test_artifacts_text}
+
+--- END OF INPUT FROM PREVIOUS STEP ---
+
+--- START OF ORIGINAL SOURCE DOCUMENTS ---
+{tagged_docs_prompt_section}
+--- END OF ORIGINAL SOURCE DOCUMENTS ---
+
+---
+
+**Output:**
+
+Produce the final output structured *strictly* with the following headings in this order. Do not add any introductory or concluding commentary outside of these sections:
+## Testable Items List
+## Test Strategy
+## Test Scenarios
+## Test Cases
+## Traceability Matrix
